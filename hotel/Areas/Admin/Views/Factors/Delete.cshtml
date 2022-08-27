@@ -1,0 +1,63 @@
+﻿@model Hotel.Models.ViewModels.FactorsViewModel
+
+@{
+    ViewBag.Title = "حذف فاکتور";
+}
+
+
+<h2>حذف فاکتور</h2>
+
+
+<h3>آیا برای حذف این فاکتور اطمینان دارید؟</h3>
+ <hr />
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.FactorId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.IsFainally)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ValidateTime)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.FainallyDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.RegisterDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.UserId)</th>
+                @*<th scope="col">@Html.DisplayNameFor(model => model.TermId)</th>*@
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(model => model.FactorId)</td>
+                <td>
+                    @if (Model.IsFainally)
+                    {
+                        <span class="text-success"> پرداخت شد</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger"> پرداخت نشد</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(model => model.ValidateTime)</td>
+                <td>@Html.DisplayFor(model => model.FainallyDate) </td>
+                <td>@Html.DisplayFor(model => model.RegisterDate)</td>
+                <td>@Html.DisplayFor(model => model.Price)</td>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+                <td>@Html.DisplayFor(model => model.User.MobileNumber)</td>
+                @*<td>@Html.DisplayFor(model => model.Term.TermName)</td>*@
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color mt-2">
+            <input type="submit" value="حذف فاکتور" class="btn btn-danger" /> |
+            @Html.ActionLink("برگشت به مدیریت", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+

@@ -1,0 +1,66 @@
+﻿@model hotel.Models.ViewModels.RoomsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>اطلاعات تکمیلی </h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomsTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomsTitle)
+        </dd>
+
+        <dt>
+            نوع اتاق
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomsGroup.RoomsGroupTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+
+        <dd>
+            <img src="/images/rooms/@Model.ImageName" class="img120x120" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.RoomsId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("برگشت به لیست", "Index", null, new { @class = "btn btn-primary" })
+</p>

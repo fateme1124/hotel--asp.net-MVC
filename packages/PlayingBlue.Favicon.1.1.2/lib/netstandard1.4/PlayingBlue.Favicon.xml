@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PlayingBlue.Favicon</name>
+    </assembly>
+    <members>
+        <member name="T:PlayingBlue.Web.Caching.IFaviconCache">
+            <summary>
+            Provides caching capabilities for <see cref="T:PlayingBlue.Web.FaviconResolver"/>.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.IFaviconCache.AddOrUpdate(System.Uri,PlayingBlue.Web.Favicon)">
+            <summary>
+            Add favicon to cache or update the existing one.
+            </summary>
+            <param name="pageUri">URI of the page that <paramref name="favicon"/> belongs to.</param>
+            <param name="favicon"><see cref="T:PlayingBlue.Web.Favicon"/> to add.</param>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.IFaviconCache.Clear">
+            <summary>
+            Remove all favicons from cache.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.IFaviconCache.Remove(System.Uri)">
+            <summary>
+            Remove favicon from cache for the specified page.
+            </summary>
+            <param name="pageUri">URI of the page that the favicon belongs to.</param>
+            <returns><c>true</c> if the favicon was found and removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.IFaviconCache.TryGet(System.Uri,PlayingBlue.Web.Favicon@)">
+            <summary>
+            Try get favicon from cache for the specified URI.
+            </summary>
+            <param name="pageUri">Target page's URI.</param>
+            <param name="favicon">
+            When this method returns, contains the favicon for the page if found; 
+            otherwise, <c>null</c>.
+            </param>
+            <returns><c>true</c> if favicon found in cache; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:PlayingBlue.Web.Caching.InMemoryFaviconCache">
+            <summary>
+            Provides in-memory favicon caching capabilities.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.InMemoryFaviconCache.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.Caching.InMemoryFaviconCache"/>.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.InMemoryFaviconCache.AddOrUpdate(System.Uri,PlayingBlue.Web.Favicon)">
+            <summary>
+            Add favicon to cache or update the existing one.
+            </summary>
+            <param name="pageUri">URI of the page that <paramref name="favicon"/> belongs to.</param>
+            <param name="favicon"><see cref="T:PlayingBlue.Web.Favicon"/> to add.</param>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.InMemoryFaviconCache.Clear">
+            <summary>
+            Remove all favicons from cache.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.InMemoryFaviconCache.Remove(System.Uri)">
+            <summary>
+            Remove favicon from cache for the specified page.
+            </summary>
+            <param name="pageUri">URI of the page that the favicon belongs to.</param>
+            <returns><c>true</c> if the favicon was found and removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:PlayingBlue.Web.Caching.InMemoryFaviconCache.TryGet(System.Uri,PlayingBlue.Web.Favicon@)">
+            <summary>
+            Try get favicon from cache for the specified URI.
+            </summary>
+            <param name="pageUri">Target page's URI.</param>
+            <param name="favicon">
+            When this method returns, contains the favicon for the page if found; 
+            otherwise, <c>null</c>.
+            </param>
+            <returns><c>true</c> if favicon found in cache; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:PlayingBlue.Web.Favicon">
+            <summary>
+            Represents favicon of a web page.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Favicon.#ctor(System.Uri)">
+            <summary>
+            Creates a new instance of <see cref="T:PlayingBlue.Web.Favicon"/>.
+            </summary>
+            <param name="imageUri">The absolute URI points to the icon image.</param>
+        </member>
+        <member name="M:PlayingBlue.Web.Favicon.#ctor(System.Uri,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:PlayingBlue.Web.Favicon"/>.
+            </summary>
+            <param name="imageUri">The absolute URI points to the icon image.</param>
+            <param name="contentType">The MIME type of the icon image.</param>
+        </member>
+        <member name="M:PlayingBlue.Web.Favicon.Deconstruct(System.Uri@,System.String@)">
+            <summary>
+            Deconstructs <see cref="T:PlayingBlue.Web.Favicon"/> into image URI and MIME content type.
+            </summary>
+            <param name="imageUri">The absolute URI points to the icon image.</param>
+            <param name="contentType">The MIME type of the icon image.</param>
+        </member>
+        <member name="P:PlayingBlue.Web.Favicon.ImageUri">
+            <summary>
+            Gets the absolute URI points to the icon image.
+            </summary>
+        </member>
+        <member name="P:PlayingBlue.Web.Favicon.ContentType">
+            <summary>
+            Gets the MIME type of the icon image.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.Favicon.ToString">
+            <summary>
+            Gets string representation of the <see cref="T:PlayingBlue.Web.Favicon"/>.
+            Returns image URI string by default.
+            </summary>
+            <returns>Image URI string by default.</returns>
+        </member>
+        <member name="T:PlayingBlue.Web.FaviconOption">
+            <summary>
+            Option used when resolving favicons.
+            </summary>
+        </member>
+        <member name="F:PlayingBlue.Web.FaviconOption.PreferRootFavicon">
+            <summary>
+            Prefer favicon at the root directory.
+            </summary>
+        </member>
+        <member name="F:PlayingBlue.Web.FaviconOption.PreferPageIcon">
+            <summary>
+            Prefer favicon specified in the web page's head section.
+            </summary>
+        </member>
+        <member name="T:PlayingBlue.Web.FaviconResolver">
+            <summary>
+            Class that resolves favicons of websites.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.FaviconResolver"/>.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.FaviconResolver"/> with the specified <see cref="T:System.Net.Http.HttpClient"/>.
+            </summary>
+            <param name="client"><see cref="T:System.Net.Http.HttpClient"/> used to send http requests.</param>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.#ctor(PlayingBlue.Web.Caching.IFaviconCache)">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.FaviconResolver"/> with the specified cache implementation.
+            </summary>
+            <param name="faviconCache">
+            <see cref="T:PlayingBlue.Web.Caching.IFaviconCache"/> used to cache the results. Specify <c>null</c> to disable caching.
+            By default, <see cref="T:PlayingBlue.Web.Caching.InMemoryFaviconCache"/> will be used.
+            </param>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.#ctor(System.Net.Http.HttpClient,System.Boolean)">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.FaviconResolver"/> with the specified <see cref="T:System.Net.Http.HttpClient"/> 
+            and a value that indicates whether this instance is responsible for disposing the <see cref="T:System.Net.Http.HttpClient"/>.
+            </summary>
+            <param name="client"><see cref="T:System.Net.Http.HttpClient"/> used to send http requests.</param>
+            <param name="disposeHttpClient">
+            <c>true</c> if <paramref name="client"/> should be disposed of by the <see cref="M:PlayingBlue.Web.FaviconResolver.Dispose"/> method, 
+            <c>false</c> if you intend to reuse <paramref name="client"/>.
+            </param>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.#ctor(System.Net.Http.HttpClient,System.Boolean,PlayingBlue.Web.Caching.IFaviconCache)">
+            <summary>
+            Create a new instance of <see cref="T:PlayingBlue.Web.FaviconResolver"/> with the specified <see cref="T:System.Net.Http.HttpClient"/>, 
+            a value that indicates whether this instance is responsible for disposing the <see cref="T:System.Net.Http.HttpClient"/> 
+            and the specified cache implementation.
+            </summary>
+            <param name="client"><see cref="T:System.Net.Http.HttpClient"/> used to send http requests.</param>
+            <param name="disposeHttpClient">
+            <c>true</c> if <paramref name="client"/> should be disposed of by the <see cref="M:PlayingBlue.Web.FaviconResolver.Dispose"/> method, 
+            <c>false</c> if you intend to reuse <paramref name="client"/>.
+            </param>
+            <param name="faviconCache">
+            <see cref="T:PlayingBlue.Web.Caching.IFaviconCache"/> used to cache the results. Specify <c>null</c> to disable caching.
+            By default, <see cref="T:PlayingBlue.Web.Caching.InMemoryFaviconCache"/> will be used.
+            </param>
+        </member>
+        <member name="P:PlayingBlue.Web.FaviconResolver.FallbackResolvers">
+            <summary>
+            Gets a list of fallback resolvers to use when the default resolving logic failed.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.ResolveFaviconAsync(System.Uri,PlayingBlue.Web.FaviconOption,System.Threading.CancellationToken)">
+            <summary>
+            Gets favicon of the specified web page.
+            </summary>
+            <param name="uri">Target pages URI.</param>
+            <param name="option">Option used to resolve favicon.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>The task representing the asynchronous operation.</returns>
+            <remarks>Result will be null when favicon not found.</remarks>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.InvalidateCache">
+            <summary>
+            Invalidates local favicon cache.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.FaviconResolver.Dispose">
+            <summary>
+            Releases the unmanaged resources and disposes of the managed resources used by the resolver.
+            </summary>
+        </member>
+        <member name="T:PlayingBlue.Web.IFaviconResolver">
+            <summary>
+            A interface used to resolve favicon for web pages.
+            </summary>
+        </member>
+        <member name="M:PlayingBlue.Web.IFaviconResolver.ResolveFaviconAsync(System.Uri,PlayingBlue.Web.FaviconOption,System.Threading.CancellationToken)">
+            <summary>
+            Gets favicon of the specified web page.
+            </summary>
+            <param name="uri">Target pages URI.</param>
+            <param name="option">Option used to resolve favicon.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>The task representing the asynchronous operation.</returns>
+            <remarks>Result will be null when favicon not found.</remarks>
+        </member>
+    </members>
+</doc>

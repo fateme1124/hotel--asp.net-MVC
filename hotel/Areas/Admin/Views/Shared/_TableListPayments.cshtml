@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Hotel.Models.ViewModels.PaymentViewModel>
+
+@{
+
+    int id = 1;
+}
+
+
+<div class="table-responsive-xl">
+    <table class="table table-striped mt-5 ">
+        <tr>
+            <th scope="col">ردیف</th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FactorId)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TittlePay)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Raservations.UserId)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.UpdateDate)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.ResultPayment)
+            </th>
+
+            <th scope="col"> عملیات</th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@id</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FactorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TittlePay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Raservations.User.MobileNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdateDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResultPayment)
+                    </td>
+                    <td class="row flex-nowrap icon-crud">
+                        <a href="/Admin/Factors/Details/@item.PaymentId"><i class="fas fa-info-circle text-info"></i></a>
+                    </td>
+                </tr>
+                id += 1;
+            }
+        </tbody>
+    </table>
+</div>

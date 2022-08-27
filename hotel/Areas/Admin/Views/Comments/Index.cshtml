@@ -1,0 +1,64 @@
+﻿@model IEnumerable<hotel.Models.ViewModels.CommentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    int id = 1;
+}
+
+<h2 class="btn btn-green">دیدگاه مسافرین</h2><br /><br /><br />
+
+<table class="table">
+    <tr>
+        <th>
+            ردیف
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @id
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.IsActive == true)
+                {
+                    <span>
+                        فعال
+                    </span>
+                }
+                else
+                {
+                    <spamn>
+                        غیر فعال
+                    </spamn>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.CommentId }, new { @class = "btn btn-warning btn-xs" }) |
+                @Html.ActionLink("جزئیات", "Details", new { id = item.CommentId }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.CommentId }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+        id += 1;
+    }
+
+</table>
+
+

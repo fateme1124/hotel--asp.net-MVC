@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Hotel.Models.ViewModels.FactorsViewModel>
+
+@{
+    ViewBag.Title = "مدیریت فاکتورها";
+}
+
+
+<h2>مدیریت فاکتورها</h2>
+
+@*@Html.Partial("_navbarFactor")*@
+@Html.Action("ShowIndex")
+
+
+
+@section Scripts{
+
+    <script>
+        function ShowFactorEnable(flag) {
+            $.ajax({
+                url:"/Admin/Factors/Enable",
+                type:"GET",
+                data:{flag:flag},
+                success:function (data){
+                    $("#enable").html(data);
+                },
+                error:function(){
+                    alert("یافت نشد");
+                }
+            });
+        }
+    </script>
+
+<script>
+
+        function ShowList() {
+            $.ajax({
+                url: "/Admin/Factors/ShowIndex",
+                type: "GET",
+                success: function (data) {
+                    $("#enable").html(data);
+                },
+                error: function () {
+                    alert("یافت نشد");
+                }
+
+            });
+        }
+
+</script>
+    <script>
+        function changeIsFainallyState(state, factorId) {
+            $.ajax({
+                url: "/Admin/Factors/ChangeIsFainallyState",
+                type: "GET",
+                data: { factorId: factorId, state: state },
+                success: function (res) {
+                    $("#showIsFainally_" + factorId).html(res);
+                },
+                error: function () {
+                    alert("Error");
+                }
+
+            });
+        }
+    </script>
+
+
+}
+

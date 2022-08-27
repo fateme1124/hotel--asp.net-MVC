@@ -1,0 +1,57 @@
+﻿@model Hotel.Models.ViewModels.FactorsViewModel
+
+@{
+    ViewBag.Title = "جزییات فاکتور";
+}
+
+<h2>اطلاعات تکمیلی فاکتور</h2>
+ <hr />
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.FactorId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.UserId)</th>
+                @*<th scope="col">@Html.DisplayNameFor(model => model.TermId)</th*@>
+                <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ValidateTime)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.FainallyDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.RegisterDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.RegisterUserId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.IsFainally)</th>
+   
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(model => model.FactorId)</td>
+                <td>@Html.DisplayFor(model => model.User.MobileNumber)</td>
+                @*<td>@Html.DisplayFor(model => model.Term.TermName)</td>*@
+                <td>@Html.DisplayFor(model => model.Price)</td>
+                <td>@Html.DisplayFor(model => model.ValidateTime)</td>
+                <td>@Html.DisplayFor(model => model.FainallyDate) </td>
+                <td>@Html.DisplayFor(model => model.RegisterDate)</td>
+                <td><span>Admin</span>@Html.DisplayFor(model => model.RegisterUserId)</td>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+                <td>
+                    @if (Model.IsFainally)
+                    {
+                        <span class="text-success"> پرداخت شد</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger"> پرداخت نشد</span>
+                    }
+                </td>        
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.FactorId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("برگشت به مدیریت ", "Index", null, new { @class = "btn btn-primary" })
+</p>

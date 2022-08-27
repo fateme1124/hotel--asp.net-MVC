@@ -1,0 +1,19 @@
+﻿@model hotel.Models.ViewModels.CommentViewModel
+
+<div class="media border p-3 m-2">
+    <img src="~/images/slider/person1.png" alt="img" class="mr-3 mt-3 rounded-circle"
+         style="width:60px;">
+    <div class="media-body">
+        <h5 >
+            @Model.Name
+            &nbsp;&nbsp;&nbsp;
+            <small>
+                <i>تاریخ درج نظر : @Html.DisplayFor(model => Model.RegisterDate)</i>
+            </small>
+        </h5>
+        <p class="border-2 border-dark">
+           ***** @Model.CommentText
+        </p>
+    </div>
+</div>
+

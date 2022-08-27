@@ -1,0 +1,580 @@
+﻿@font-face {
+    font-family: 'koodak';
+    src: url('../fonts/KoodakBold.eot?#')format('eot'), url('../fonts/KoodakBold.ttf')format('truetype'), url('../fonts/KoodakBold.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nazanin';
+    src: url('../fonts/Nazanin.eot?#')format('eot'), url('../fonts/Nazanin.ttf')format('truetype'), url('../fonts/Nazanin.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: url('../fonts/Yekan.eot?#')format('eot'), url('../fonts/Yekan.ttf')format('truetype'), url('../fonts/Yekan.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    /*overflow-x: hidden;*/
+}
+
+
+/* Navbar  */
+
+
+
+.nav-link {
+    font-family: 'koodak' !important;
+}
+
+.navbar-brand {
+    font-family: 'yekan' !important;
+}
+
+/* End Navbar  */
+
+
+.cslider {
+    width: 100%;
+    height: 550px;
+    background-color:#cca489;
+    margin-top: -14px;
+}
+
+/*box hotel*/
+
+.jum{
+    width:100%;
+    height:500px;
+    background-color:#5b4432;
+
+}
+
+
+    #des{
+    width:500px;
+    height:300px;
+    margin-right:150px;
+}
+
+
+    .home {
+    width: 50%;
+    height: 500px;
+}
+
+    p{
+    font-family:'yekan';
+}
+
+    .cm{
+    margin-right:20px;
+    margin-left:40px;
+    margin-top:40px;
+    width:95%;
+    height:450px;
+    border-radius:30px;
+}
+
+.btn-warning {
+    text-decoration-color: #36281c;
+}
+
+/*end box hotel*/
+/* about */
+.c1 {
+    width: 100%;
+    height: 270px;
+    background-color: #cca489;
+}
+
+    span {
+    font-family:'2  Titr';
+    font-size:large;
+}
+
+    p{
+    font-family:'2  Titr';
+    line-height:30px;
+    text-shadow:none;
+    
+}
+
+/*end about*/
+
+/*بالابر*/
+
+.fix{
+    margin-bottom:15px;
+    margin-right:15px;
+    
+}
+
+/*roomsgroup*/
+
+.landing {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.home-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-inner1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/rooms/554685.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-inner .dark {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 7rem 2rem;
+}
+
+.caption {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+    color: #fff;
+}
+
+    .caption h1 {
+        font-family: 'yekan';
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 0.3rem;
+        text-shadow: 0.1rem 0.1rem 0.8rem #000;
+        padding-bottom: 1rem;
+    }
+
+    .caption h2 {
+        font-family: koodak;
+        font-size: 2rem;
+        text-shadow: 0.1rem 0.1rem 0.5rem #000;
+        padding-bottom: 1.6rem;
+    }
+
+
+/*end roomsgroup*/
+/*start*/
+
+.area {
+    margin: 0 auto;
+    padding: 4rem 2rem 1rem;
+    background-color: #cca489;
+}
+
+    .area h2 {
+        font-size: 2.4rem;
+        font-family: 'yekan';
+        color: #36281c;
+    }
+    .underline {
+    width: 17rem;
+    height: 0.2rem;
+    background-color: #5b4432;
+    margin: 1rem auto 2rem;
+}
+    .area p {
+    font-family: 'nazanin';
+    color: #433022;
+    font-weight:500;
+}
+
+
+/*end start*/
+/*room*/
+
+.bg-co {
+    background-color: #cca489;
+}
+.jumbotron {
+    background-color: #5b4432;
+    border-color: orange;
+    border-width: 2px;
+/*    box-shadow: 5px 2px 2px orange;*/
+}
+.room-color{
+    width:100%;
+    height:100%;
+    
+}
+/*end room*/
+
+/*restauran*/
+
+.home-inner2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/restauran/R (1).jfif');
+    background-size: cover;
+    background-position: center center;
+}
+
+/*end restauran*/
+
+/*hall*/
+
+.home-inner3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/hall/hotel-restaurant-design.jpg');
+    background-size: cover;
+    background-position: center center
+}
+/*end hall*/
+
+/*buy*/
+
+.home-inner4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/buy/Lille_Perle_Jewellery_by_Heterarchy_Royal_Leamington_Spa_UK.jpg');
+    background-size: cover;
+    background-position: center center
+}
+
+/*end buy*/
+
+
+.main {
+    width: 90%;
+    margin: 10px auto 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #f1f1f1;
+    padding: 5px;
+}
+.rooms-item2 {
+    padding: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #f1f1f1;
+    font-family: 'yekan';
+}
+
+    .rooms-item2 img {
+        width: 100%;
+    }
+
+    .rooms-item2 p {
+        text-align: justify;
+        padding: 5px;
+    }
+
+/*Add Date*/
+.home-inner6 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#111035;
+    background-size: cover;
+    background-position: center center;
+}
+
+.caption form {
+    font-family: 'nazanin';
+    font-size: 1.75rem;
+    letter-spacing: 0.3rem;
+    text-shadow: 0.1rem 0.1rem 0.8rem #000;
+    padding-bottom: 2rem;
+    width: 30%;
+    position: absolute;
+    margin-top: -10%;
+    margin-right:35%;
+    z-index: 2;
+    color:orange;
+    border:double;
+}
+.caption a {
+    position: absolute;
+    margin-top: 330px;
+    width:10%;
+    margin-right:-60px;
+}
+
+
+/*End Date*/
+/*.landing1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/slider/back1.jpg);
+    background-position: center;
+    background-size: cover;
+}*/
+
+
+/*
+.home-inner7 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/slider/back1.jpg');
+    background-size: cover;
+    background-position: center center;
+    z-index:-1;
+}*/
+
+/*start bank*/
+
+.bodybank {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    color: #b9cac7;
+    font-family: Comfortaa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cardContainer {
+    width: 21rem;
+    height: 12.75rem;
+    background-color: #111035;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1.5rem;
+    transition: .5s;
+}
+
+    .cardContainer header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+.cardBank {
+    font-weight: 900;
+}
+
+.cardLogo {
+    cursor: pointer;
+    animation: rotate .5s linear 1;
+    
+}
+
+label {
+    margin: 0 0 0 auto;
+}
+
+.cardLogo:active {
+    animation: none;
+}
+
+.cardChip {
+    align-self: flex-start;
+    padding-right:250px;
+}
+
+.cardNumber {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.cardContainer footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.cardName {
+    text-transform: uppercase;
+    margin-left: 95px;
+}
+
+.cardExp {
+    margin: 0 0 0 auto;
+}
+
+body.light .cardContainer {
+    background-color: #f6f6f6;
+    color: #131313;
+}
+
+#toggle {
+    display: none;
+}
+
+    #toggle:checked ~ .cardContainer {
+        background-color: #f6f6f6;
+        color: #131313;
+    }
+
+@keyframes rotate {
+    20% {
+        transform: translateX(5px);
+    }
+
+    40% {
+        transform: translateX(-5px);
+    }
+
+    60% {
+        transform: translateX(5px);
+    }
+
+    80% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
+}
+.pardakht {
+    /*padding-right:100px;*/
+
+}
+/*end bank*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rooms-panel {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #f1f1f1;
+}
+
+.rooms-item-right-details {
+    width: 15%;
+    padding: 5px;
+}
+
+.rooms-item-left {
+    width: 70%;
+}
+
+    .rooms-item-left a {
+        text-decoration: none;
+        color: #000;
+    }
+
+.rooms-title {
+    margin-top: 5px;
+    height: 60%;
+    padding: 0 5px;
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+    font-weight: bolder;
+}
+
+.rooms-title-details {
+    margin-top: 5px;
+    height: 20%;
+    padding: 0 5px;
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+    font-weight: bolder;
+}
+
+.rooms-desc {
+    height: 25%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .rooms-desc div {
+        font-size: 14px;
+        color: #9da0a0;
+    }
+
+.rooms-item2 {
+    padding: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #f1f1f1;
+    font-family: 'yekan';
+}
+
+    .rooms-item2 img {
+        width: 100%;
+    }
+
+    .rooms-item2 p {
+        text-align: justify;
+        padding: 5px;
+    }
+
+.text-white{
+    text-decoration:none;
+}

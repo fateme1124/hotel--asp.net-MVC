@@ -1,0 +1,70 @@
+﻿@model Hotel.Models.ViewModels.FactorsViewModel
+@using System.Web.Optimization
+@using Hotel.Models.Models
+
+@{
+    ViewBag.Title = "افزودن فاکتور";
+    var user = ViewBag.User as User;
+}
+
+<h2>افزودن فاکتور جدید</h2>
+<hr/>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <section id="creatFactor">
+ 
+        <div class="form-row mt-4 d-flex flex-column" >
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.UserId)
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Price, new { @class = "control-label " })
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.IsFainally, new { @class = "control-label " })
+                @Html.EditorFor(model => model.IsFainally, new { htmlAttributes = new { @class = "check-isactive" } })
+                @Html.ValidationMessageFor(model => model.IsFainally, "", new { @class = "text-danger" })
+            </div>
+            @*<div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Term.TermName, "دوره", new { @class = "control-label" })
+                @Html.DropDownList("TermId", String.Empty)
+                @Html.ValidationMessageFor(model => model.Term.TermName, "", new { @class = "text-danger" })
+            </div>*@
+        </div>
+        
+          
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="درج فاکتور " class="btn btn-success" /> |
+                    @Html.ActionLink("برگشت به مدیریت ", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+ 
+    </section>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+

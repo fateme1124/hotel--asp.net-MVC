@@ -1,0 +1,44 @@
+﻿@model Hotel.Models.ViewModels.PaymentViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>اطلاعات تکمیلی پرداخت</h2>
+<hr />
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.PaymentId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.TittlePay)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ResultPayment)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.UpdateDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.RegisterDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.TransactionCode)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.FactorId)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.RaservationsId)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(model => model.PaymentId)</td>
+                <td>@Html.DisplayFor(model => model.TittlePay)</td>
+                <td>@Html.DisplayFor(model => model.Price)</td>
+                <td>@Html.DisplayFor(model => model.ResultPayment)</td>
+                <td>@Html.DisplayFor(model => model.UpdateDate)</td>
+                <td>@Html.DisplayFor(model => model.RegisterDate)</td>
+                <td>@Html.DisplayFor(model => model.TransactionCode)</td>
+                <td>@Html.DisplayFor(model => model.FactorId)</td>
+                <td>@Html.DisplayFor(model => model.RaservationsId)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("برگشت به مدیریت", "Index", null, new { @class = "btn btn-primary" })
+</p>

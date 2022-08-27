@@ -1,0 +1,56 @@
+﻿@model IEnumerable<hotel.Models.ViewModels.RoomsViewModel>
+
+@{
+    ViewBag.Title = "SelectRooms";
+}
+
+
+<div class="table-responsive-xl w-75 m-auto">
+    <table class="table table-striped mt-5 ">
+        <tr class="text-center">
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RoomsId)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RoomsTitle)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.PricePerNight)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.CapacityRoom)
+            </th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomsId)
+                    </td>
+                    <td>
+                        <img src="~/images/rooms/@item.ImageName" class="img120x120" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomsTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="text-danger fw-bolder">
+                        @Html.DisplayFor(modelItem => item.PricePerNight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapacityRoom)
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+</div>

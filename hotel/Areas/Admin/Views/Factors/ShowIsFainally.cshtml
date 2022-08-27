@@ -1,0 +1,13 @@
+﻿@model hotel.Models.ViewModels.FactorIsFainallyViewModel
+
+@if (Model.FactorState)
+{
+
+    <input type="checkbox" checked="checked" onclick="changeIsFainallyState(false,@Model.FactorId)" />
+    <sapn class="text-success">پرداخت شده </sapn><span>/</span><span>پرداخت نشده</span>
+}
+else
+{
+    <input type="checkbox" onclick="changeIsFainallyState(true,@Model.FactorId)" />
+    <span>پرداخت شده</span><span>/</span><sapn class="text-danger">پرداخت نشده</sapn>
+}

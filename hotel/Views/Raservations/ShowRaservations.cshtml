@@ -1,0 +1,70 @@
+﻿@model hotel.Models.ViewModels.RaservationsViewModel
+@{
+    ViewBag.Title = "ShowRaservations";
+}
+
+<div style="background-color:darkgray">
+    <br /><br />
+    <h2 class="text-center">***لطفا اتاق و تاریخ خود را انتخاب کنید***</h2>
+    <br />
+    <div class="text-center m-auto bg-light w-75" style="border-radius:40px;">
+        @using (Html.BeginForm("ShowRaservations", "Raservations", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal text-center">
+                <hr />
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.RaservationId)
+                @Html.HiddenFor(model => model.UserId)
+
+
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.InnerDate, new { @class = "control-label " })
+                    @*@Html.EditorFor(model => model.InnerDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                    <input type="date" name="تاریخ" value="date" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.InnerDate, "", new { @class = "text-danger" })
+                </div><br />
+
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.OuterDate, new { @class = "control-label " })
+                    @*@Html.EditorFor(model => model.OuterDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                    <input type="date" name="تاریخ" value="date" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.OuterDate, "", new { @class = "text-danger" })
+                </div><br />
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.CountOfUser, new { @class = "control-label col-md-2" })
+                    <div class="">
+                        @*@Html.EditorFor(model => model.CountOfUser)*@
+                        <input type="number" name="تعداد همراه" value="number" min="0" max="4" class="form-control" />
+                        <br />@Html.ValidationMessageFor(model => model.CountOfUser, "", new { @class = "text-danger " })
+                    </div>
+                    <div class="form-group col-md-5 m-auto">
+                        @Html.LabelFor(model => model.RoomsId, new { @class = "control-label " })
+                        @*@Html.EditorFor(model => model.RoomsId, new { htmlAttributes = new { @class = "form-control" } })*@
+                        <input type="number" name="شماره اتاق" value="number" min="0" max="7" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.RoomsId, "", new { @class = "text-danger" })
+                    </div><br />
+                </div><br />
+
+                <div class="form-group col-md-5 m-auto">
+                    <div class="col-md-offset-2 ">
+                        @*<input type="submit" value="ثبت اطلاعات " class="btn btn-success" />*@
+                        @Html.ActionLink("ثبت اطلاعات", "FainalyDate", @*new { id = Model.UserId }*@ null, new { @class = "btn btn-primary" }) 
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div><br />
+        }
+    </div>
+    <br />
+    <hr />
+</div>
+
+@Html.Action("SelectRooms", "Raservations")
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+

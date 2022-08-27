@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    <link rel="icon" href="images/logo/favicon.png" type="image/ico" />
+    <link href="~/Content/slider-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/persianDatepicker.css" />
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/persianDatepicker.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body dir="rtl" style="overflow-x:hidden">
+    @RenderBody()
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/slider-script.js"></script>
+    <script src="~/Scripts/main-script.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script>
+        function runMessage() {
+            $("#Name").val("");
+            $("#Email").val("");
+            alert("نظر شما با موفقیت ارسال شد، شما باید منتظر تایید مدیریت سایت بمانید.");
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#input1, #span1").persianDatePicker();
+        });
+    </script>
+</body>
+</html>

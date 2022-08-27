@@ -1,0 +1,72 @@
+﻿@model IEnumerable<hotel.Models.ViewModels.RaservationsViewModel>
+
+@{
+
+    int id = 1;
+}
+
+<table class="table">
+    <tr>
+        <th scope="col">ردیف</th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisterDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InnerDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OuterDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountOfUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomsId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@id</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InnerDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OuterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountOfUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomsId)
+            </td>
+            @*<td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.RaservationId }, new { @class = "btn btn-warning btn-xs" }) |
+                @Html.ActionLink("جزئیات", "Details", new { id = item.RaservationId }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.RaservationId }, new { @class = "btn btn-danger btn-xs" })
+            </td>*@
+            <td class="row flex-nowrap icon-crud">
+                <a href="/Admin/Raservation/Details/@item.RaservationId"><i class="fas fa-info-circle text-info"></i></a>
+             </td>
+        </tr>
+        id += 1;
+    }
+
+</table>

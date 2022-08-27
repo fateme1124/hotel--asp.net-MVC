@@ -1,0 +1,86 @@
+﻿@model hotel.Models.ViewModels.RaservationsViewModel
+@{
+    ViewBag.Title = "FainalyDate";
+}
+<div style="background-color:antiquewhite; overflow-y:hidden;">
+    <br /><br /><h2 class="text-center">***آیا اطلاعات مورد تایید شما میباشد ؟***</h2><hr /><br />
+
+    <div class="table-responsive-xl w-50 m-auto bg-secondary text-light"style="border-radius:40px;"><br />
+        <table class="m-auto table-hover fw-bolder">
+            <tr>
+                <td class="col-md-6">
+                    نام هتل<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    هتل آسمان
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    نام شما<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.User.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    نام خانوادگی<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.User.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    شماره موبایل<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.User.MobileNumber)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    @Html.DisplayNameFor(model => model.CountOfUser)<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.CountOfUser)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    @Html.DisplayNameFor(model => model.InnerDate)<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.InnerDate)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    @Html.DisplayNameFor(model => model.OuterDate)<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.OuterDate)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    @Html.DisplayNameFor(model => model.RoomsId)<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.RoomsId)
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-6">
+                    @Html.DisplayNameFor(model => model.UserId)<pre style="color:bisque;">****************</pre>
+                </td>
+                <td class="col-md-6">
+                    @Html.DisplayFor(model => model.UserId)
+                </td>
+            </tr>
+        </table>  <br />     
+    </div><br /><br />
+        <a href="/Raservations/Bank" class="btn btn-success" style="margin-bottom:230px; margin-right:650px;">تایید و پرداخت</a>
+</div>
+

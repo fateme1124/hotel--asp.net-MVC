@@ -1,0 +1,71 @@
+﻿@model IEnumerable<hotel.Models.ViewModels.RoomsViewModel>
+@{
+    ViewBag.Title = "اتاق ها";
+}
+
+
+
+<h2>لیست اتاق ها</h2>
+
+<p>
+    @Html.ActionLink("ايجاد اتاق جدید", "Create", null, new { @class = "btn btn-success btn-xs" })
+</p>
+<table class="table">
+    <tr>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.RoomsTitle)
+        </th>
+        <th class="col-md-3">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.PricePerNight)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.CapacityRoom)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.RegisterDate)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-md-1">
+                <img src="/images/rooms/@item.ImageName" class="img60x60" />
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.RoomsTitle)
+            </td>
+            <td class="col-md-3">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.PricePerNight)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.CapacityRoom)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.RegisterDate)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td class="col-md-3">
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.RoomsId }, new { @class = "btn btn-warning btn-xs" }) |
+                @Html.ActionLink("جزئیات", "Details", new { id = item.RoomsId }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.RoomsId }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<hotel.Models.ViewModels.RoomsGroupViewModel>
+
+@{
+    ViewBag.Title = "انواع اتاق ها";
+}
+
+<h2>لیست انواع اتاق ها</h2>
+
+<p>
+    @Html.ActionLink("درج نوع اتاق جدید", "Create", null, new { @class = "btn btn-success btn-xs" })
+</p>
+<table class="table">
+    <tr>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.RoomsGroupId)
+        </th>
+        <th class="col-md-1">
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th class="col-md-2">
+            @Html.DisplayNameFor(model => model.RoomsGroupTitle)
+        </th>
+        <th class="col-md-5">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.RoomsGroupId)
+            </td>
+            <td class="col-md-1">
+                <img src="~/images/rooms-group/@item.ImageName" class="img60x60" />
+
+            </td>
+            <td class="col-md-2">
+                @Html.DisplayFor(modelItem => item.RoomsGroupTitle)
+            </td>
+            <td class="col-md-5">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.RoomsGroupId }, new { @class = "btn btn-warning btn-xs" }) |
+                @Html.ActionLink("جزئیات", "Details", new { id = item.RoomsGroupId }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.RoomsGroupId }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>

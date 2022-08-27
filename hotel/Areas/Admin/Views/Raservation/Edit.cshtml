@@ -1,0 +1,83 @@
+﻿@model hotel.Models.ViewModels.RaservationsViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<h2>ویرایش رکورد</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.RaservationId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RegisterDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RegisterDate)
+                @Html.ValidationMessageFor(model => model.RegisterDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InnerDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InnerDate)
+                @Html.ValidationMessageFor(model => model.InnerDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OuterDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OuterDate)
+                @Html.ValidationMessageFor(model => model.OuterDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountOfUser, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CountOfUser)
+                @Html.ValidationMessageFor(model => model.CountOfUser)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IsActive)
+                @Html.ValidationMessageFor(model => model.IsActive)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoomsId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RoomsId)
+                @Html.ValidationMessageFor(model => model.RoomsId)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.UserId, "UserId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("UserId", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserId)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ذخیره تغییرات" class="btn btn-warning"/> |
+                @Html.ActionLink("برگشت به لیست", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Hotel.Models.ViewModels.FactorsViewModel>
+@using Hotel.Classes
+@{
+    int id = 1;
+}
+<div id="enable" class="table-responsive-xl"> 
+    <table class="table table-striped mt-5 " >
+        <thead>
+            <tr>
+                <th scope="col">ردیف</th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                @*<th scope="col">
+                    @Html.DisplayNameFor(model => model.TermId)
+                </th>*@
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.FainallyDate)
+                </th>
+                @*<th scope="col">
+                    @Html.DisplayNameFor(model => model.IsFainally)
+                </th>*@
+                @*<th scope="col">
+                   مدت اعتبار
+                </th>
+                <th scope="col">
+                    عملیات 
+                </th>*@
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@id</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.MobileNumber)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Term.TermName)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FainallyDate)
+                </td>
+                @*<td id="showIsFainally_@item.FactorId">
+
+                    @Html.Action("ShowIsFainally", "Factors", new { factorId = item.FactorId, state = item.IsFainally })
+
+                </td>
+                <td>
+                    @item.FactorId.ValideDate()
+                </td>*@
+                <td class="row flex-nowrap icon-crud">
+                    <a href="/Admin/Factors/Delete/@item.FactorId"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/Admin/Factors/Edit/@item.FactorId"><i class="fas fa-pen-square text-warning"></i></a>
+                    <a href="/Admin/Factors/Details/@item.FactorId"><i class="fas fa-info-circle text-info"></i></a>
+                </td>        
+            </tr>
+            id += 1;
+        }
+            </tbody>
+
+    </table>
+
+</div>

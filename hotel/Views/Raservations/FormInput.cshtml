@@ -1,0 +1,146 @@
+﻿@model hotel.Models.ViewModels.UserViewModel
+@{
+    ViewBag.Title = "FormInput";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.RoleId)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div style="background-color:darkgray; height:100%; width:100%;overflow:hidden; background-size:cover">
+        <br /><h2 class="left text-center text-">***اطلاعات خود را وارد کنید***</h2><br />
+        <div class="text-center m-auto bg-light w-50" style="border-radius:60px;">
+
+            <div class="form-horizontal text-center">
+                <hr />
+                @Html.ValidationSummary(true)
+
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label " })
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div><br />
+
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.LastName, new { @class = "control-label " })
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div><br />
+                <div class="form-group col-md-5 m-auto">
+                    @Html.LabelFor(model => model.MobileNumber, new { @class = "control-label col-md-2" })
+                    <div class="">
+                        @Html.EditorFor(model => model.MobileNumber)
+                        <br />@Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div><br /><br /><br />
+
+                <div class="form-group col-md-5 m-auto">
+                    <div class="col-md-offset-2 ">
+                        @*<input type="submit" value="ثبت اطلاعات" class="btn btn-success" />*@
+                        @Html.ActionLink("ثبت رزرو", "ShowRaservations", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+
+            </div><br />
+
+        </div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+}
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="card card p-5" style="width: 100%">
+        <table class="table table-bordered table-striped data-table1" style="min-width: 100%">
+            <thead>
+                <tr class="text-center">
+                    <th class="col-md-2">نام</th>
+                    <th class="col-md-2">نام خانوادگی</th>
+                    <th class="col-md-2">شماره موبایل</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr class="text-center">
+                    <td class="col-md-2">
+                        <br /><input type="text" name="text" value="" placeholder="نام خود راوارد کنید" required /><br /><br />
+                    </td>
+                    <td class="col-md-2">
+                        <br /><input type="text" name="text" value="" placeholder="نام خانوادگی خود را وارد کنید" required />
+                    </td>
+                    <td class="col-md-2">
+                        <br /><input type="tel" name="number" value="" placeholder="شماره موبایل" required />
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+        <br /><br /><a class="bg-success text-white justify-content-center btn btn-success" href="/">ثبت اطلاعات</a>
+    </div>*@

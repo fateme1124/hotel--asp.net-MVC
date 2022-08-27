@@ -1,0 +1,101 @@
+﻿@model  hotel.Models.ViewModels.RoomsViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h2>ویرایش رکورد</h2>
+
+
+
+@using (Html.BeginForm("Edit", "Rooms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.RoomsId)
+    @*@Html.HiddenFor(model => model.RoomsTitle)*@
+    @Html.HiddenFor(model => model.RegisterDate)
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.ImageName)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoomsTitle, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RoomsTitle)
+            @Html.ValidationMessageFor(model => model.RoomsTitle)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PricePerNight, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PricePerNight)
+            @Html.ValidationMessageFor(model => model.PricePerNight)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CapacityRoom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CapacityRoom)
+            @Html.ValidationMessageFor(model => model.CapacityRoom)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImageName, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            <img src="/images/rooms/@Model.ImageName" class="img60x60" id="impPrev" />
+            <input type="file" id="imgupload" name="imgUpload" onchange="showPreview(this)" value="nophoto.png" />
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoomsGroupId, "RoomsGroupId", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("RoomsGroupId", String.Empty)
+            @Html.ValidationMessageFor(model => model.RoomsGroupId)
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ذخیره تغییرات" class="btn btn-warning" /> |
+            @Html.ActionLink("برگشت به لیست", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/main-script.js"></script>
+}
